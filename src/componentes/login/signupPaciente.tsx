@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Form, Button, Alert, Spinner } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../../estilos/login.css';
 import Cookies from 'js-cookie';
 import { useNavigate } from 'react-router-dom'; // Importar useNavigate para redirigir
 

@@ -5,7 +5,7 @@
     padding: 20px;
     margin: 0 auto; /* Centra horizontalmente */
     max-width: 450px; /* Ajusta el ancho según lo que prefieras */
-    margin-top: -90px; /* Ajusta el margen superior según tus necesidades */
+    margin-top: 90px; /* Ajusta el margen superior según tus necesidades */
     max-height: 700px;
     overflow: hidden;
     position: relative;

@@ -1,5 +1,6 @@
 .dashboard {
     background-color: #f0f2f5;
+    margin-top: 90px;
     min-height: 100vh;
     padding: 20px;
     padding-top: 170px; /* Ajusta este valor según sea necesario */
@@ -7,10 +8,11 @@
 
 .dash-paciente{
     padding-top: 50px;
+    background-color: #f0f2f5;
 }
 
 .container {
-    background-color: #ffffff; /* Fondo blanco para el contenedor */
+    background-color: #f0f2f5; /* Fondo blanco para el contenedor */
     border-radius: 8px; /* Bordes redondeados */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra */
     padding: 20px 20px; /* Espaciado interno para mayor separación */
@@ -26,7 +28,7 @@
 }
 
 .dashboard-card {
-    background-color: #ffffff; /* Color de fondo */
+    background-color: #f0f2f5; /* Color de fondo */
     border-radius: 8px; /* Bordes redondeados */
     padding: 1.25rem; /* Espaciado interno */
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); /* Sombra */

@@ -41,6 +41,7 @@ const RegistroKinesiologo: React.FC = () => {
         throw new Error('Error al obtener las especialidades');
       }
       const data = await response.json();
+
       // Filtrar solo las especialidades activas (estado: true)
       setEspecialidades(
         data.data.filter((especialidad: Especialidad) => especialidad.estado)
@@ -49,6 +50,7 @@ const RegistroKinesiologo: React.FC = () => {
       console.error('Error al obtener las especialidades:', error);
     }
   };
+
   const fetchConsultorios = async () => {
     try {
       const response = await fetch('/api/consultorios', {
