@@ -41,6 +41,7 @@ interface Paciente {
   turnos: Turno[];
 }
 
+
 function SecretariaDashboard() {
   const [especialidad, setEspecialidad] = useState<Especialidad | null>(null);
   const [especialidades, setEspecialidades] = useState<Especialidad[]>([]);
@@ -54,6 +55,7 @@ function SecretariaDashboard() {
   const [turnosFiltrados, setTurnosFiltrados] = useState<Turno[]>([]);
 
   const navigate = useNavigate();
+
 
   // Función para obtener las especialidades activas
   const fetchEspecialidades = async () => {
@@ -259,12 +261,12 @@ function SecretariaDashboard() {
     }
   }, [especialidad]);
 
-    // Efecto para cargar los turnos cuando se selecciona un kinesiólogo
-    useEffect(() => {
-      if (kinesiologoSeleccionado) {
-        fetchTurnosPendientes(kinesiologoSeleccionado);
-      }
-    }, [kinesiologoSeleccionado]);
+  // Efecto para cargar los turnos cuando se selecciona un kinesiólogo
+  useEffect(() => {
+    if (kinesiologoSeleccionado) {
+      fetchTurnosPendientes(kinesiologoSeleccionado);
+    }
+  }, [kinesiologoSeleccionado]);
 
   return (
     <body className='dash-secretaria'>

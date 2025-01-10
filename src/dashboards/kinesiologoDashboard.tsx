@@ -27,6 +27,7 @@ interface Paciente {
   apellido: string;
 }
 
+
 const KinesiologoDashboard: React.FC = () => {
   const [turnosPendientes, setTurnosPendientes] = useState<Turno[]>([]);
   const [turnosRealizados, setTurnosRealizados] = useState<Turno[]>([]);
@@ -36,6 +37,7 @@ const KinesiologoDashboard: React.FC = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    
     const obtenerDatosKinesiologo = async () => {
       try {
         const response = await fetch('/api/kinesiologos/turnos', {

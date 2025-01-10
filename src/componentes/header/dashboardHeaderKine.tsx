@@ -1,20 +1,43 @@
 import { useNavigate } from 'react-router-dom';
 import '../../estilos/headerDashboard.css';
 import Cookies from 'js-cookie';
+import { useState } from 'react';
 
 const DashboardHeaderKine: React.FC = () => {
+  const [error, setError] = useState('');
+
   const navigate = useNavigate();
 
   const handleNavigation = (path: string) => {
     navigate(path);
   };
 
-  const handleLogout = () => {
-    // Eliminar el token de las cookies
-    Cookies.remove('token');
+  const handleLogout = async (event: React.FormEvent) => {
+    event.defaultPrevented
+
+    try{
+      const response = await fetch('/api/pacientes/logout',{
+        method: 'POST',
+        credentials: 'include',
+      });
+      
+      const data = await response.json();
+
+      if(!response.ok){
+        setError(data.message || 'Error al cerrar seccion')
+        return;
+      }
+      
+      // Eliminar el token de las cookies y volves a pagina principal
+      Cookies.remove('token');
+      navigate('/');
+
+
+    }catch(error){
+      console.error('Error al cerrar sesión:', error);
+      setError('Error en la conexión. Inténtalo más tarde.');
+    }
     
-    // Redirigir al login o página de inicio
-    navigate('/'); // Puedes cambiar esto a '/' si prefieres redirigir a la página principal
   };
 
   return (
@@ -40,6 +63,7 @@ const DashboardHeaderKine: React.FC = () => {
         </li>
         </ul>
     </div>
+    {error && <div className="error-message">{error}</div>}
     </nav>
   );
 };
